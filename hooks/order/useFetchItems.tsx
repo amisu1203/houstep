@@ -29,11 +29,6 @@ export const useFetchAllItems = () => {
       setResponse(res.data);
     } catch (err) {
       const axiosError = err as AxiosError;
-      // 타임아웃 에러일 시
-      // todo: 타임아웃 에러 났을때 알러트 띄우는거 처리 추가하기
-      if (axiosError.code === "ECONNABORTED") {
-        router.back();
-      }
       console.error("전체 상품 조회에 실패했습니다.", err);
       setError(axiosError);
     } finally {
