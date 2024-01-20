@@ -1,8 +1,9 @@
 import axios from "axios";
+import { AXIOS_TIMEOUT } from "../constants/axiosInstance";
 
 export const axiosInstance = axios.create({
   baseURL: "http://localhost:3001",
-  // todo: 시간 상수로 변경하기
-  timeout: 6000,
+  timeout: AXIOS_TIMEOUT,
 });
+
 export default axiosInstance;
